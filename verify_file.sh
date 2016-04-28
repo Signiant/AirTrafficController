@@ -18,17 +18,17 @@ if [ -z "$FILE_TO_VERIFY" ]; then
 fi
 
 if [ ! -s "$PUBLIC_KEY" ]; then
-    echo "ERROR: Public key file '$PUBLIC_KEY' does not exist"
+    echo "ATC: ERROR: Public key file '$PUBLIC_KEY' does not exist"
     exit 1
 fi
 
 if [ ! -s "$FILE_TO_VERIFY" ]; then
-    echo "ERROR: Input file '$FILE_TO_VERIFY' does not exist"
+    echo "ATC: ERROR: Input file '$FILE_TO_VERIFY' does not exist"
     exit 1
 fi
 
 if [ ! -s "$SIGNATURE_FILE" ]; then
-    echo "ERROR: Cannot find signature file '$SIGNATURE_FILE'"
+    echo "ATC: ERROR: Cannot find signature file '$SIGNATURE_FILE'"
     exit 1
 fi
 
