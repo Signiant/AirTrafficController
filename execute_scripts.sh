@@ -45,7 +45,7 @@ do
   fi
   echo $f
   #Run the verification script against the file
-  ./verify_file.sh $1 $f 2>&1 | logger
+  $SCRIPT_DIR/verify_file.sh $1 $f
   if [ "$?" != 0 ]; then
       logger "ATC-$$: ERROR: Could not verify $f -- skipping execution"
   else
