@@ -24,10 +24,10 @@ ATC runs as a crontab entry on your instances syncing an AWS bucket/key with a l
 - Watch for execution on 5 minute intervals.
 
 
-#Signing scripts
+# Signing scripts
 In order for scripts to be executed they must be signed and verified against the public_key that will be included on your instance.
 
-##To sign:
+## To sign:
 - Generate a RSA public/private key pair (ssh-keygen -t rsa)
 - Use the sign_file.sh script inputting the generated private key and the script you want to sign: `sign_file.sh <private_key> <file_to_sign>`
 - Put the script along with the generated .sig file into the bucket that ATC will sync from (ATC_SCRIPTS_BUCKET environment variable)
