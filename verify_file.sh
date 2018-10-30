@@ -1,3 +1,5 @@
+#!/bin/bash
+
 PUBLIC_KEY=$1
 FILE_TO_VERIFY=$2
 SIGNATURE_FILE=$2.sig
