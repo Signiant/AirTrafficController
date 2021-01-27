@@ -28,9 +28,11 @@ while read -r line; do
 
   OUTPUT=$($CMD)
 
-  if [ $VERBOSE == 1 ]; then
-    logger $OUTPUT
-  fi
+  if [ $? -eq 0 ] && [ $VERBOSE == 1 ]; then
+    echo "S3SYNC: command successful"
+  else
+    echo "S3SYNC ERROR: on command ${CMD}"
+    logger "S3SYNC ERROR: on command: ${CMD}"
 
   if [[ $OUTPUT == *"download"* ]]; then
     echo "S3SYNC: New/Changed files were downloaded - setting marker"
