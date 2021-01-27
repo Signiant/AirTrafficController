@@ -28,8 +28,11 @@ while read -r line; do
 
   OUTPUT=$($CMD)
 
-  if [ $VERBOSE == 1 ]; then
-    logger $OUTPUT
+  if [ $? -eq 0 ] && [ $VERBOSE == 1 ]; then
+    echo "S3SYNC: command successful"
+  else
+    echo "S3SYNC ERROR: on command ${CMD}"
+    logger "S3SYNC ERROR: on command: ${CMD}"
   fi
 
   if [[ $OUTPUT == *"download"* ]]; then
@@ -43,3 +46,4 @@ while read -r line; do
     logger "No new/changed files were downloaded"
   fi
 done < ${FOLDERS_MAP_FILE}
+( [s3]=flight-config-us-west-2/debug/scripts [local]=/tmp/atc_scripts )
