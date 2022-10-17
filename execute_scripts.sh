@@ -50,6 +50,6 @@ do
       logger "ATC-$$: ERROR: Could not verify $f -- skipping execution"
   else
       logger "ATC-$$: Running $f in background..."
-      (python $f; logger "ATC-$$: Deleting $f"; rm -f $f; rm -f $f.sig) &
+      (python3 $f; logger "ATC-$$: Deleting $f"; rm -f $f; rm -f $f.sig) &
   fi
 done

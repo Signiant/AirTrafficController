@@ -20,7 +20,7 @@ while read -r line; do
   echo "S3SYNC: Syncing S3:${folders[s3]} => local:${folders[local]}"
   logger "S3SYNC: Syncing S3:${folders[s3]} => local:${folders[local]}"
 
-  CMD="/usr/bin/aws s3 sync s3://${folders[s3]} ${folders[local]}"
+  CMD="/usr/local/bin/aws s3 sync s3://${folders[s3]} ${folders[local]}"
 
   if [ $VERBOSE == 1 ]; then
     logger "Sync command: ${CMD}"
